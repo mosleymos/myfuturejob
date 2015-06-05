@@ -8,9 +8,11 @@
 
 <body>
 <div class="wrapper">
+    <div class="container">
 
-  {{> yield }}
+        {{> yield }}
 
+    </div>
 </div>
 </body>
 
@@ -31,21 +33,27 @@
 
 </style>
 
-    {{> navigation }}
-    {{> loginButtons }}
-
+<div class="row">
+    <div class="col-md-12">
+        {{> navigation }}
+        {{> loginButtons }}
+    </div>
+</div>
+    
     {{#if currentUser }}
 
     <div clas="row-fluid">
+
         <div class="col-md-6">
-            <img src="not_find_my_way.jpg" class="thumbs">
-            <a href="{{ pathFor 'questions' }}">Avez vous une idée</a>
+            <img src="not_find_my_way.jpg" class="thumbs"><br>
+            <a href="{{ pathFor 'questions' }}" class="navigation-links">Avez vous une idée</a>
         </div>
 
         <div class="col-md-6">
-            <a href="{{ pathFor 'questions' }}">Je n'ai pas d'idée</a>
             <img src="find_my_way.jpg" class="thumbs">
+            <a href="{{ pathFor 'questions' }}" class="navigation-links">Je n'ai pas d'idée</a><br>
         </div>
+
     </div>
 
 
@@ -60,19 +68,24 @@
 
     <form>
 
-        <label for="fNom">Nom</label><hr>
-        <input type="text" value="name"><hr>
+        <label for="fQuestion1">Si vous animiez une émission de TV, ce serait…</label><hr>
+        <input type="checkbox" value="element" name="Incroyable expériences">Incroyable expériences<hr>
+        <input type="checkbox" value="element" name="Dr Cac">Dr Cac<hr>
+        <input type="checkbox" value="element" name="Ce Soir ou Jamais">Ce Soir ou Jamais<hr>
+        <input type="checkbox" value="element" name="Tracks">Tracks<hr>
 
-        <label for="fNom">Nom</label><hr>
-        <input type="text" value="name"><hr>
 
-        <label for="fNom">Nom</label><hr>
-        <input type="text" value="name"><hr>
+        <label for="fQuestion2">C'est bientot l'anniversaire de votre meilleur ami(e), vous lui offrez…</label><hr>
+        <input type="checkbox" value="element" name="Incroyable expériences">Week end surprise<hr>
+        <input type="checkbox" value="element" name="Dr Cac">Shooting photo<hr>
+        <input type="checkbox" value="element" name="Ce Soir ou Jamais">Match de football<hr>
 
-        <input type="checkbox" value="element" name="element">Curieux<hr>
-        <input type="checkbox" value="element" name="element">Curieux<hr>
-        <input type="checkbox" value="element" name="element">Curieux<hr>
-        <input type="checkbox" value="element" name="element">Curieux<hr>
+        <label for="fQuestion3">Si vous deviez devenir une personnnalité, ce serait…</label><hr>
+        <input type="checkbox" value="element" name="Incroyable expériences">Hilary Clinton<hr>
+        <input type="checkbox" value="element" name="Dr Cac">Norman (il fait des vidéos)<hr>
+        <input type="checkbox" value="element" name="Ce Soir ou Jamais">Zlatan<hr>
+        <input type="checkbox" value="element" name="Ce Soir ou Jamais">Black M<hr>
+
 
     </form>
 
@@ -144,6 +157,13 @@
 <div class="main-menu">
 <div class="page-header">
   <h1>My Future Job <small>find my way in the ways</small></h1>
+<div class="row">
+        <div class="col-md-12">
+            <img src="myfuturelogo.png">
+        </div>
+    </div>
+
 </diV>
 </div>
+
 </template>

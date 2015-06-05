@@ -8,7 +8,14 @@ body{
 .wrapper {
 
     padding: 3em 3em;
+
 }
 
+.main-menu {
+   text-align:center;
+}
 
+.navigation-links {
+   font-size: 1em;
+}
 
