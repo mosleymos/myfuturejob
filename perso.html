@@ -1,0 +1,149 @@
+<head>
+  <title>perso</title>
+
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+</head>
+
+<body>
+<div class="wrapper">
+
+  {{> yield }}
+
+</div>
+</body>
+
+<template name="hello">
+
+<style>
+.custom-restricted-width {
+    /* To limit the menu width to the content of the menu: */
+    display: inline-block;
+    /* Or set the width explicitly: */
+    /* width: 10em; */
+}
+
+.thumbs {
+    height:400px;
+    width:400px;
+}
+
+</style>
+
+    {{> navigation }}
+    {{> loginButtons }}
+
+    {{#if currentUser }}
+
+    <div clas="row-fluid">
+        <div class="col-md-6">
+            <img src="not_find_my_way.jpg" class="thumbs">
+            <a href="{{ pathFor 'questions' }}">Avez vous une idée</a>
+        </div>
+
+        <div class="col-md-6">
+            <a href="{{ pathFor 'questions' }}">Je n'ai pas d'idée</a>
+            <img src="find_my_way.jpg" class="thumbs">
+        </div>
+    </div>
+
+
+    {{/if}}
+
+</template>
+
+<template name="questions">
+
+    {{> navigation }}
+    <h1>Questions à poser au lycéen</h1>
+
+    <form>
+
+        <label for="fNom">Nom</label><hr>
+        <input type="text" value="name"><hr>
+
+        <label for="fNom">Nom</label><hr>
+        <input type="text" value="name"><hr>
+
+        <label for="fNom">Nom</label><hr>
+        <input type="text" value="name"><hr>
+
+        <input type="checkbox" value="element" name="element">Curieux<hr>
+        <input type="checkbox" value="element" name="element">Curieux<hr>
+        <input type="checkbox" value="element" name="element">Curieux<hr>
+        <input type="checkbox" value="element" name="element">Curieux<hr>
+
+    </form>
+
+    <a href="{{ pathFor 'map' }}">Votre Carte</a>
+
+</template>
+
+
+<template name="map">
+    {{> navigation }}
+    <h2>Affichage de la carte</h2>
+    <style>
+        #map {
+            height:600px;
+            width:600px;
+        }
+
+    </style>
+    <div id="map">
+
+    </div>
+
+
+<script>
+//    <iframe width="400" height="215" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://vizcities.apps.rawk.es"></iframe><br />
+
+		var map = L.map('map').setView([48.405, 2.3],8);
+
+		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			id: 'examples.map-i875mjb7'
+		}).addTo(map);
+
+
+		L.marker([48.5, 2.3]).addTo(map)
+			.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+
+
+		L.marker([48.0, 2.1]).addTo(map)
+			.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+
+
+		L.marker([48.0234, 2.050]).addTo(map)
+			.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+
+
+
+
+		var popup = L.popup();
+
+		function onMapClick(e) {
+			popup
+				.setLatLng(e.latlng)
+				.setContent("You clicked the map at " + e.latlng.toString())
+				.openOn(map);
+		}
+
+		map.on('click', onMapClick);
+
+</script>
+
+</template>
+
+
+<template name='navigation'>
+<div class="main-menu">
+<div class="page-header">
+  <h1>My Future Job <small>find my way in the ways</small></h1>
+</diV>
+</div>
+</template>
