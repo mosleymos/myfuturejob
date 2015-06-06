@@ -19,3 +19,15 @@ body{
    font-size: 1em;
 }
 
+.profil-title {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.profil-element {
+   font-size: 2em;
+}
+
+.profil-element ul li {
+    list-style:none;
+}

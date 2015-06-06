@@ -94,6 +94,47 @@
 </template>
 
 
+<template name="videos">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B9n92fLCC78?list=RDxUbCzJd-saY" frameborder="0" allowfullscreen></iframe>
+<h3>Dites m'en plus</h3>
+
+<button class="btn-default">Positif</button>
+<button class="btn-default">Négatif</button>
+
+<form>
+
+        <label for="fQuestion3">Qu'est ce qu'il t'a plu dans la vidéo…</label><hr>
+        <input type="checkbox" value="element" name="Incroyable expériences">Humour<hr>
+        <input type="checkbox" value="element" name="Dr Cac">Echange avec les gens<hr>
+        <input type="checkbox" value="element" name="Ce Soir ou Jamais">Techniques<hr>
+
+</form>
+
+</template>
+
+
+<template name="profil">
+
+<h3 class="profil-title">Profil</h3>
+<img src="avatar_femme.gif" class="thumbs">
+<h4 class="profil-element">Mes talents</h4>
+<ul>
+    <li>Analyser des situations complexes</li>
+    <li>Faciliter la vie des gens</li>
+    <li>Développer des idées </li>
+    <li>Ecouter des gens </li>
+</ul>
+<h4 class="profil-element">Mes motivations</h4>
+    <ul>
+        <li>Curieuse</li>
+    </ul>
+<h4 class="profil-element">Mes domaines</h4>
+
+<p>Informaticienne</p>
+
+</template>
+
+
 <template name="map">
     {{> navigation }}
     <h2>Affichage de la carte</h2>
@@ -104,51 +145,9 @@
         }
 
     </style>
-    <div id="map">
-
-    </div>
-
-
-<script>
-//    <iframe width="400" height="215" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://vizcities.apps.rawk.es"></iframe><br />
-
-		var map = L.map('map').setView([48.405, 2.3],8);
-
-		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-			maxZoom: 18,
-			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-			id: 'examples.map-i875mjb7'
-		}).addTo(map);
-
-
-		L.marker([48.5, 2.3]).addTo(map)
-			.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-
-		L.marker([48.0, 2.1]).addTo(map)
-			.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-
-		L.marker([48.0234, 2.050]).addTo(map)
-			.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-
-
-
-		var popup = L.popup();
-
-		function onMapClick(e) {
-			popup
-				.setLatLng(e.latlng)
-				.setContent("You clicked the map at " + e.latlng.toString())
-				.openOn(map);
-		}
-
-		map.on('click', onMapClick);
-
-</script>
+      <img src="cartoon_map.png">
+    <a href="{{ pathFor 'profil'}}">Mon profil</a>
+    <a href="{{ pathFor 'videos'}}">Videos</a>
 
 </template>
 
