@@ -13,3 +13,14 @@ Router.route('/map', function(){
 });
 
 
+Router.route('/videos', function(){
+    this.render('videos');
+});
+
+
+Router.route('/profil', function(){
+    this.render('profil');
+});
+
+
+
